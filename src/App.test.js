@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import App from './App';
+import App from './Components/App/App';
 
-test('renders learn react link', () => {
+test('renders mixTape header', () => {
   const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
+  const linkElement = getByText(/mixTape/i);
   expect(linkElement).toBeInTheDocument();
 });
