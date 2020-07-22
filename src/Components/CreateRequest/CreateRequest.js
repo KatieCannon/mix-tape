@@ -4,12 +4,7 @@ import "./CreateRequest.css"
 
 class CreateRequest extends React.Component {
     render(){
-        return (
-            <div className="requestForMixTape">
-                <button onClick={this.props.onCreate}>+</button>
-                <h2>Create me a mix-tape</h2>
-            </div>
-        );
+        return <button className="requestButton" onClick={this.props.onCreate}>+ Create me a Spotify mix</button>
     }
 }
 

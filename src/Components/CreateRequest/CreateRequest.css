@@ -1,0 +1,11 @@
+.requestButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color:white;
+    background-color: black;
+    cursor: pointer;
+    border: none;
+    margin-bottom: 0.5rem;
+    font-size: 3em;
+}
