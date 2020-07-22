@@ -8,7 +8,8 @@ class CreateRequest extends React.Component {
         return (
        <Link 
             to = {'/create-mixtape'} 
-            className="requestButton">+ Create me a Spotify mix</Link>
+            className="requestButton"
+            >+ Create me a Spotify mix</Link>
         )
     }
 }
