@@ -1,28 +1,23 @@
 import React from 'react';
+import { Router } from '@reach/router';
 import Title from '../Title/Title';
 import CreateRequest from '../CreateRequest/CreateRequest';
+import MixTapes from '../MixTapes/MixTapes';
+import MixTapeCreator from '../MixTapeCreator/MixTapeCreator';
 import './App.css';
 
 class App extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            create: false
-        }
-        this.hideCreateRequest = this.hideCreateRequest.bind(this);
-    } 
-    hideCreateRequest(){
-        this.setState({
-            create: true
-        });
-    }
     render(){
         return (
             <div className="App">
                 <header className="App-header">
                     <Title />
                 </header>
-                {!this.state.create ? <CreateRequest onCreate={this.hideCreateRequest}/> : <></>}
+                <Router>
+                    <CreateRequest path="/" />
+                    <MixTapes path="/" />
+                    <MixTapeCreator path="/create-mixtape" />
+                </Router>
             </div>
         );
     }
