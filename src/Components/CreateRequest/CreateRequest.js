@@ -1,10 +1,15 @@
 import React from 'react';
+import { Link } from '@reach/router';
 import "./CreateRequest.css"
 
 
 class CreateRequest extends React.Component {
     render(){
-        return <button className="requestButton" onClick={this.props.onCreate}>+ Create me a Spotify mix</button>
+        return (
+       <Link 
+            to = {'/create-mixtape'} 
+            className="requestButton">+ Create me a Spotify mix</Link>
+        )
     }
 }
 
