@@ -1,9 +1,15 @@
 import React from 'react';
 import './MixTapes.css';
+import MixTape from '../MixTape/MixTape';
 
 class MixTapes extends React.Component {
     render(){
-        return <h1>mixTapes</h1>
+        return (
+            <div>
+                {this.props.mixTapes.map(mix =>{
+                    return <MixTape key={mix.id} name={mix.name}/>})}
+            </div>
+        )
     }
 }
 

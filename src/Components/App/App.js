@@ -25,7 +25,7 @@ class App extends React.Component {
                     <Title />
                 </header>
                 <Router>
-                    <RequestScreen path="/" />
+                    <RequestScreen path="/" mixTapes={this.state.mixTapes}/>
                     <MixTapeCreator path="/create-mixtape" />
                 </Router>
             </div>

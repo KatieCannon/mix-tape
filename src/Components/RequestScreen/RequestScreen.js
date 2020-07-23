@@ -7,7 +7,7 @@ class RequestScreen extends React.Component {
         return (
             <div>
                 <CreateRequest />
-                <MixTapes />
+                <MixTapes mixTapes={this.props.mixTapes}/>
             </div>
         )
     }
