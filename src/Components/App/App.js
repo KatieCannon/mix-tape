@@ -6,6 +6,18 @@ import MixTapeCreator from '../MixTapeCreator/MixTapeCreator';
 import './App.css';
 
 class App extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            mixTapes:[{
+                id: 1,
+                name: 'mixTape1'
+            }, {
+                id: 2,
+                name: 'mixTape2'
+            }]
+        }
+    }
     render(){
         return (
             <div className="App">
