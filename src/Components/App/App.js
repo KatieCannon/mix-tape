@@ -1,8 +1,7 @@
 import React from 'react';
 import { Router } from '@reach/router';
 import Title from '../Title/Title';
-import CreateRequest from '../CreateRequest/CreateRequest';
-import MixTapes from '../MixTapes/MixTapes';
+import RequestScreen from '../RequestScreen/RequestScreen';
 import MixTapeCreator from '../MixTapeCreator/MixTapeCreator';
 import './App.css';
 
@@ -14,8 +13,7 @@ class App extends React.Component {
                     <Title />
                 </header>
                 <Router>
-                    <CreateRequest path="/" />
-                    <MixTapes path="/" />
+                    <RequestScreen path="/" />
                     <MixTapeCreator path="/create-mixtape" />
                 </Router>
             </div>
