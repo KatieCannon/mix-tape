@@ -2,8 +2,18 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    color:white;
-    margin-bottom: 0.5rem;
-    font-size: 3em;
+    color:#09203f;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    font-size: 1.5em;
     text-decoration: none;
+}
+.requestButton:hover{
+    color:#020c1a;
+}
+
+@media only screen and (min-width: 768px){
+    .requestButton{
+        font-size: 3em;
+    }
 }
