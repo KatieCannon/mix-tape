@@ -1,6 +1,11 @@
 .Title {
-    color: white;
+    color:#09203f;
     text-align: center;
-    font-size: 5em;
+    font-size: 4em;
     margin: 0.5rem;
+}
+@media only screen and (min-width: 768px){
+    .Title{
+        font-size: 5em;
+    }
 }
