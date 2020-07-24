@@ -2,8 +2,7 @@ import React from 'react';
 import './MixTapes.css';
 import MixTape from '../MixTape/MixTape';
 
-class MixTapes extends React.Component {
-    render(){
+const MixTapes = () => {
         return (
             <div className='mixTapes'>
                 {this.props.mixTapes.map(mix => {
@@ -12,7 +11,6 @@ class MixTapes extends React.Component {
                 })}
             </div>
         )
-    }
 }
 
 export default MixTapes;
