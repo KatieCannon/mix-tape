@@ -11,7 +11,10 @@
 .requestButton:hover{
     color:#020c1a;
 }
-
+.requestButton:focus{
+    outline: none;
+    text-shadow: 1px 1px 4px white;
+}
 @media only screen and (min-width: 768px){
     .requestButton{
         font-size: 3em;
