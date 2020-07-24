@@ -1,8 +1,17 @@
 import React from 'react';
+import SearchBar from '../SearchBar/SearchBar';
+import SearchResults from '../SearchResults/SearchResults';
+import PlayList from '../PlayList/PlayList';
 
 class MixTapeCreator extends React.Component {
     render(){
-        return <h1>MixTapeCreator</h1>
+        return (
+            <div>
+                <SearchBar />
+                <SearchResults />
+                <PlayList />
+            </div>
+        )
     }
 }
 
