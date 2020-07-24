@@ -1,0 +1,11 @@
+.MixTapeCreator {
+    display: flex;
+    flex-direction: column;
+}
+
+@media only screen and (min-width: 768px) {
+    .MixTapeCreator {
+        flex-direction: row;
+        justify-content: center;
+    }
+}

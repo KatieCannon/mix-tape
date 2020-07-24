@@ -1,0 +1,17 @@
+.PlayList {
+    display:flex;
+    flex-direction: column;
+    align-content: center;
+    min-width: 250px;
+    min-height: 5em;
+    background-color:white;
+    margin: 1rem;
+    padding: 1rem;
+    box-shadow: 0 4px 2px 2px
+}
+
+@media only screen and (min-width: 768px) {
+    .PlayList {
+        min-width:40%;
+    }
+}
