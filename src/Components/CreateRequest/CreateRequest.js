@@ -7,7 +7,7 @@ const CreateRequest = () => {
     return (
        <Link 
         to = {'/create-mixtape'} 
-        className='requestButton'
+        className='RequestButton'
         >+ Create me a Spotify mix</Link>
     )
 }

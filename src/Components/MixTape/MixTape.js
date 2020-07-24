@@ -3,7 +3,7 @@ import './MixTape.css';
 
 const MixTape = (props) => {
     return (
-        <div className='mixTape'>
+        <div className='MixTape'>
             <h1>{props.name}</h1>
         </div>
     )

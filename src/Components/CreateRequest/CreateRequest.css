@@ -1,4 +1,4 @@
-.requestButton {
+.RequestButton {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -8,15 +8,15 @@
     font-size: 1.5em;
     text-decoration: none;
 }
-.requestButton:hover{
+.RequestButton:hover{
     color:#020c1a;
 }
-.requestButton:focus{
+.RequestButton:focus{
     outline: none;
     text-shadow: 1px 1px 4px white;
 }
 @media only screen and (min-width: 768px){
-    .requestButton{
+    .RequestButton{
         font-size: 3em;
     }
 }

@@ -4,7 +4,7 @@ import MixTape from '../MixTape/MixTape';
 
 const MixTapes = (props) => {
     return (
-        <div className='mixTapes'>
+        <div className='MixTapes'>
             { props.mixTapes.map(mix => {
                 return <MixTape key={mix.id} name={mix.name} />
             })}

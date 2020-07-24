@@ -3,7 +3,7 @@ h1{
     font-size: 1em;
 }
 
-.mixTape {
+.MixTape {
     height: 3em;
     display: flex;
     justify-content: center;
@@ -16,17 +16,17 @@ h1{
     border-left: black solid 10px;
     background-color:whitesmoke;
 }
-.mixTape:nth-child(2n){
+.MixTape:nth-child(2n){
     transform: translateX(10px);
     background-color:#E8E8E8;
     font-family: 'Knewave', cursive;
 }
-.mixTape:nth-child(3n){
+.MixTape:nth-child(3n){
     transform: translateX(5px);
     font-family: 'Indie Flower', cursive;
     background-color:#F8F8FF;
 }
-.mixTape:nth-child(4n){
+.MixTape:nth-child(4n){
     transform: translateX(15px);
     font-family: 'Rock Salt', cursive;
     background-color:#F8f8f6;
@@ -36,7 +36,7 @@ h1{
     h1{
         font-size: 3em;
     }
-    .mixTape{
+    .MixTape{
         border: black solid 4px;
         height: 8em;
         border-right: black solid 40px;
