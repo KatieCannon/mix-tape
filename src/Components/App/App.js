@@ -4,58 +4,25 @@ import Title from '../Title/Title';
 import RequestScreen from '../RequestScreen/RequestScreen';
 import MixTapeCreator from '../MixTapeCreator/MixTapeCreator';
 import './App.css';
+import Spotify from '../../utils/Spotify';
 
 class App extends React.Component {
     constructor(props){
         super(props);
-        this.state = {
-            mixTapes:[{
-                id: 1,
-                name: 'mixTape1 r&b'
-            }, {
-                id: 2,
-                name: 'mixTape2'
-            }, {
-                id: 3,
-                name: 'mixTape3'
-            }, {
-                id:4,
-                name: 'mixTape4 reggae'
-            }, {
-                id:5,
-                name: 'mixTape5'
-            }, {
-                id: 6,
-                name: 'mixTape6'
-            }, {
-                id: 7,
-                name: 'mixTape7'
-            }, {
-                id: 8,
-                name: 'mixTape8'
-            }, {
-                id: 9,
-                name: 'mixTape9'
-            }, {
-                id: 10,
-                name: 'mixTape10'
-            }, {
-                id: 11,
-                name: 'mixTape11'
-            }, {
-                id: 12,
-                name: 'mixTape12'
-            }, {
-                id: 13,
-                name: 'mixTape13'
-            }, {
-                id: 14,
-                name: 'mixTape14'
-            }, {
-                id: 15,
-                name: 'mixTape15'
-            }]
-        }
+        this.state = { mixTapes:[]}
+        this.getPlayLists = this.getPlayLists.bind(this);
+    }
+    componentDidMount(){
+        this.setMixTapesState();
+    }
+    setMixTapesState(){
+        return this.getPlayLists();
+    }
+    async getPlayLists(){
+        const playLists = await Spotify.getMyPlayLists();
+        this.setState({
+            mixTapes:playLists
+        });
     }
     render(){
         return (
