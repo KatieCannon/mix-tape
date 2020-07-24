@@ -3,15 +3,13 @@ import { Link } from '@reach/router';
 import "./CreateRequest.css"
 
 
-class CreateRequest extends React.Component {
-    render(){
-        return (
+const CreateRequest = () => {
+    return (
        <Link 
-            to = {'/create-mixtape'} 
-            className="requestButton"
-            >+ Create me a Spotify mix</Link>
-        )
-    }
+        to = {'/create-mixtape'} 
+        className="requestButton"
+        >+ Create me a Spotify mix</Link>
+    )
 }
 
 export default CreateRequest;
