@@ -1,12 +1,12 @@
 import React from 'react';
 import './MixTape.css';
 
-const MixTape = () => {
-        return (
+const MixTape = (props) => {
+    return (
         <div className='mixTape'>
-            <h1>{this.props.name}</h1>
+            <h1>{props.name}</h1>
         </div>
-        )
+    )
 }
 
 export default MixTape;

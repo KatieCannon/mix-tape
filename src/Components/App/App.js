@@ -7,32 +7,32 @@ import './App.css';
 import Spotify from '../../utils/Spotify';
 
 class App extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state = { mixTapes:[]}
+        this.state = { mixTapes: [] }
         this.getPlayLists = this.getPlayLists.bind(this);
     }
-    componentDidMount(){
+    componentDidMount() {
         this.setMixTapesState();
     }
-    setMixTapesState(){
+    setMixTapesState() {
         return this.getPlayLists();
     }
-    async getPlayLists(){
+    async getPlayLists() {
         const playLists = await Spotify.getMyPlayLists();
         this.setState({
-            mixTapes:playLists
+            mixTapes: playLists
         });
     }
-    render(){
+    render() {
         return (
-            <div className="App">
-                <header className="App-header">
+            <div className='App'>
+                <header className='App-header'>
                     <Title />
                 </header>
                 <Router>
-                    <RequestScreen path="/" mixTapes={this.state.mixTapes}/>
-                    <MixTapeCreator path="/create-mixtape" />
+                    <RequestScreen path='/' mixTapes={this.state.mixTapes} />
+                    <MixTapeCreator path='/create-mixtape' />
                 </Router>
             </div>
         );
