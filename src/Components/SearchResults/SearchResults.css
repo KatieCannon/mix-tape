@@ -12,6 +12,7 @@
 
 .SearchResults h1 {
     color: white;
+    font-size: 2rem;
 }
 @media only screen and (min-width: 768px) {
     .SearchResults {

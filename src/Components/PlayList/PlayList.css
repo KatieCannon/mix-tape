@@ -7,11 +7,26 @@
     background-color: #09203f;
     margin: 1rem;
     padding: 1rem;
-    box-shadow: 0 4px 2px 2px
+    box-shadow: 0 4px 2px 2px;
 }
+.PlayList input{
+    width:100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgba(256, 256, 256, 0.8);
+    color: white;
+    font-size: 2rem;
+}
+.PlayList input::placeholder{
+    color: white;
+    opacity: 0.5;
+}
+
 
 @media only screen and (min-width: 768px) {
     .PlayList {
         min-width:40%;
     }
 }
+
