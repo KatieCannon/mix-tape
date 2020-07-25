@@ -19,7 +19,11 @@ class MixTapeCreator extends React.Component {
     }
     async handleSearch(term) {
         const searchResults = await Spotify.search(term);
-        this.setState({searchResults: searchResults});
+        const mixTapeTrackIds = this.state.mixTapeTracks.map(track => track.id);
+        const filteredSearchResults = searchResults.filter(searchListTrack => {
+        return !mixTapeTrackIds.includes(searchListTrack.id);
+    });
+        this.setState({searchResults: filteredSearchResults});
     }
     addTrack(track){
         const tracks = this.state.mixTapeTracks;
