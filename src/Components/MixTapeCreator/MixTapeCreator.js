@@ -15,6 +15,7 @@ class MixTapeCreator extends React.Component {
         this.handleSearch = this.handleSearch.bind(this);
         this.addTrack = this.addTrack.bind(this);
         this.removeTrack = this.removeTrack.bind(this);
+        this.removeFromSearchResults = this.removeFromSearchResults.bind(this);
     }
     async handleSearch(term) {
         const searchResults = await Spotify.search(term);
@@ -33,12 +34,20 @@ class MixTapeCreator extends React.Component {
           mixTapeTracks: tracks
         });
       }
+      removeFromSearchResults(trackId){
+        const filteredSearchResults=this.state.searchResults.filter(searchListTrack => {
+          return searchListTrack.id !== trackId;
+        });
+        this.setState({
+          searchResults: filteredSearchResults
+        });
+    }
     render(){
         return (
             <div>
                 <SearchBar onSearch={this.handleSearch} />
                 <div className='MixTapeCreator'>
-                    <SearchResults searchResults={this.state.searchResults} onAdd={this.addTrack} />
+                    <SearchResults searchResults={this.state.searchResults} onAdd={this.addTrack} onRemoveFromSearchResults={this.removeFromSearchResults} />
                     <PlayList mixTapeTracks={this.state.mixTapeTracks} onRemove={this.removeTrack} />
                 </div>
             </div>

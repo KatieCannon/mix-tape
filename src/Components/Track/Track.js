@@ -9,6 +9,7 @@ class Track extends React.Component {
     }
     handleAddTrack(){
         this.props.onAdd(this.props.track);
+        this.props.onRemoveFromSearchResults(this.props.track.id);
    }
    handleRemoveTrack(){
     this.props.onRemove(this.props.track);
