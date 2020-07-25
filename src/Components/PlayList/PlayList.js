@@ -7,7 +7,7 @@ class PlayList extends React.Component {
         return (
             <div className='PlayList'>
                 <h1>PlayList</h1>
-                <Tracklist tracks={this.props.mixTapeTracks}/>
+                <Tracklist tracks={this.props.mixTapeTracks} onRemove={this.props.onRemove} isRemoval={true} />
                 </div>
         )
     }
