@@ -15,7 +15,10 @@ class PlayList extends React.Component {
             <div className='PlayList'>
                  <input placeholder="mixTape name" onChange={this.handleNameChange}/>
                 <Tracklist tracks={this.props.mixTapeTracks} onRemove={this.props.onRemove} isRemoval={true} />
+                <div className="Playlist-save-div">
+                    <button  className="Playlist-save"onClick={this.props.onSave}>SAVE TO SPOTIFY</button>
                 </div>
+            </div>
         )
     }
 }
