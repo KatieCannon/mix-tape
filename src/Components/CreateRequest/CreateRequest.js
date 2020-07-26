@@ -8,7 +8,7 @@ const CreateRequest = () => {
        <Link 
         to = {'/create-mixtape'} 
         className='RequestButton'
-        >+ Create me a Spotify mix</Link>
+        >+ Create a Spotify mix</Link>
     )
 }
 
