@@ -11,13 +11,14 @@ class MixTapeCreator extends React.Component {
         this.state = {
             searchResults:[],
             mixTapeTracks:[],
-            playListName:''
+            mixTapeName:''
         }
         this.handleSearch = this.handleSearch.bind(this);
         this.addTrack = this.addTrack.bind(this);
         this.removeTrack = this.removeTrack.bind(this);
         this.removeFromSearchResults = this.removeFromSearchResults.bind(this);
         this.updatePlaylistName = this.updatePlaylistName.bind(this);
+        this.savePlaylist = this.savePlaylist.bind(this);
     }
     async handleSearch(term) {
         const searchResults = await Spotify.search(term);
@@ -39,8 +40,8 @@ class MixTapeCreator extends React.Component {
         this.setState({
           mixTapeTracks: tracks
         });
-      }
-      removeFromSearchResults(trackId){
+    }
+    removeFromSearchResults(trackId){
         const filteredSearchResults=this.state.searchResults.filter(searchListTrack => {
           return searchListTrack.id !== trackId;
         });
@@ -50,16 +51,27 @@ class MixTapeCreator extends React.Component {
     }
     updatePlaylistName(name){
         this.setState({
-          playListName: name
+          mixTapeName: name
         });
-      }
+    }
+    savePlaylist() {
+    const trackURIs = this.state.mixTapeTracks.map(track => track.uri);
+    Spotify.savePlaylist(this.state.mixTapeName, trackURIs).then(() => {
+       this.setState({
+        mixTapeName: '',
+        mixTapeTracks: []
+      });
+      window.location.href = '/';
+
+    });
+  }
     render(){
         return (
             <div>
                 <SearchBar onSearch={this.handleSearch} />
                 <div className='MixTapeCreator'>
                     <SearchResults searchResults={this.state.searchResults} onAdd={this.addTrack} onRemoveFromSearchResults={this.removeFromSearchResults} />
-                    <PlayList mixTapeTracks={this.state.mixTapeTracks} onRemove={this.removeTrack} onNameChange={this.updatePlaylistName} />
+                    <PlayList mixTapeName={this.state.mixTapeName} mixTapeTracks={this.state.mixTapeTracks} onRemove={this.removeTrack} onNameChange={this.updatePlaylistName} onSave={this.savePlaylist}/>
                 </div>
             </div>
         )
