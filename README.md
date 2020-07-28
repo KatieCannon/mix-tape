@@ -1,68 +1,83 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# mixTape
 
-## Available Scripts
+An improved Spotify playlist creation experience inspired by old school mixtape creation utilising the Spotify api and React. The result offers an easier way to view the playlist whilst searching for tracks to add to it.
 
-In the project directory, you can run:
 
-### `npm start`
+[Here is a link to the live site.](https://mix-tape.netlify.app/)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## User Stories
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Users can view all current playlists  
+Users can search for tracks by name, artist or album  
+Users can select tracks from results with one click to add to the playlist  
+Users can remove tracks from playlist before saving if they no longer want it in playlist  
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+### Installing
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Fork this repository to your own GitHub account  
+Clone it to your local machine and cd into it  
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+    $ git clone <your fork's url>
+    $ cd mix-tape
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Install all package dependencies  
 
-### `npm run eject`
+    $ npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The dependencies that will install are:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    @reach/router: ^1.3.4,
+    react: ^16.13.1,
+    react-dom: ^16.13.1,
+    react-scripts: 3.4.1
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Development
 
-## Learn More
+Once everything is installed, you can run the app locally
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    $ npm start
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+This will start up the development server and it will open a new browser tab for you with the app running on localhost:3000
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+To access Spotify you will need to go have a Spotify account and login to [developers dashboard](https://developer.spotify.com/dashboard/login).   
 
-### Analyzing the Bundle Size
+Once you have logged in click create an app.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Insert a name and description for the app and accept terms and conditions once read.
 
-### Making a Progressive Web App
+Copy the Client ID and then create a .env file. set the client id within the .env file remembering not to use quotation marks.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+        REACT_APP_SPOTIFY_CLIENT_ID=paste your client ID here
 
-### Advanced Configuration
+To then get access to Spotify you will need to click on edit settings.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+In the Redirsct URIs input field insert `http://localhost:3000/` and then click save at the bottom of the page.
 
-### Deployment
+You will then need to go to the Spotify.js file and change the redirectUri variable to `http://localhost:3000/`.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+        const redirectUri = 'http://localhost:3000/';
 
-### `npm run build` fails to minify
+If you deploying then redirectUri variable will need changing to the name of the deployed application and the same done as above where we added the uri to the Spotify app from the Spotify dashboard and the also remember to set the environment variables
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Routes
+
+The following URL paths are available:
+
+``` PATH / ```  
+Homepage that displays the names of all the playlists you have created and a button thtb we take you tpo the screen to create a new playlist  
+
+``` PATH /create-mixtape```    
+Playlist creating screen that allows you to search tracks by name, artist or album. You can add tracks to the playlist from the search results.You can search multiple times whilst making the playlist. You can also remove tracks added to the playlist before saving. The playlist can only be created when a playlist name is entered.
+
+## Deployment
+
+ My mixTape app has been deployed using Netlify.
+
+## Authors
+
+Katie Cannon
